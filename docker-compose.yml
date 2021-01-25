@@ -1,0 +1,33 @@
+version: '3.6'
+
+services:
+  php:
+    build:
+      context: ./docker
+      dockerfile: php.Dockerfile
+    container_name: voting_app-php
+    depends_on:
+      - database
+    volumes:
+      - '.:/var/www/html:cached'
+
+  nginx:
+    image: 'nginx:1.13.6'
+    container_name: voting_app-nginx
+    links:
+      - 'php'
+    volumes:
+      - '.:/var/www/html:cached'
+      - './docker:/etc/nginx/conf.d:cached'
+
+  database:
+    image: 'mariadb:10.5'
+    container_name: voting_app-database
+    restart: 'on-failure'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: voting-db
+
+networks:
+  default:
+    name: voting_app
