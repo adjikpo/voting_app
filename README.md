@@ -1,5 +1,16 @@
 # Voting app: Dockerize  app for voting
 
+
+### Principal contributors :
+[Arthur][A]
+& [Etienne][E]
+
+[A]:https://github.com/adjikpo
+[E]:https://github.com/Lorddistrict
+
+---------------------------------------------------------
+
+
 ## TP
 - :heavy_check_mark: Create a application in order to vote students projects.
 - :heavy_check_mark: Create a development environment for the project.
