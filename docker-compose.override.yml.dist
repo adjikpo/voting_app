@@ -1,0 +1,11 @@
+version: '3.6'
+
+services:
+  nginx:
+    ports:
+      - '**:80'
+      - '**:443'
+
+  database:
+    ports:
+      - "**:3306"
