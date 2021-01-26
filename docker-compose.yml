@@ -10,6 +10,8 @@ services:
       - database
     volumes:
       - '.:/var/www/html:cached'
+    networks:
+      - backend-network
 
   nginx:
     image: 'nginx:1.13.6'
@@ -19,6 +21,9 @@ services:
     volumes:
       - '.:/var/www/html:cached'
       - './docker:/etc/nginx/conf.d:cached'
+    networks:
+      - frontend-network
+      - backend-network
 
   database:
     image: 'mariadb:10.5'
@@ -27,7 +32,11 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: voting-db
+    networks:
+      - backend-network
 
 networks:
-  default:
-    name: voting_app
+  frontend-network:
+    driver: bridge
+  backend-network:
+    driver: bridge
