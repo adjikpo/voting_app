@@ -9,7 +9,7 @@ services:
     depends_on:
       - database
     volumes:
-      - './src/:/var/www/html:cached'
+      - './app/:/var/www/html:cached'
     networks:
       - backend-network
 
@@ -19,7 +19,7 @@ services:
     links:
       - 'php'
     volumes:
-      - './src:/var/www/html:cached'
+      - './app:/var/www/html:cached'
       - './docker:/etc/nginx/conf.d:cached'
     networks:
       - frontend-network

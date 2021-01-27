@@ -37,7 +37,7 @@ help:
 .PHONY: env ## Init
 env:
 	$(RUN) cp docker-compose.override.yml.dist docker-compose.override.yml
-	$(RUN) cp src/.env src/.env.local
+	$(RUN) cp app/.env app/.env.local
 	$(RUN) cp .env .env.docker
 	echo "Please fill environment files, then use make all"
 
