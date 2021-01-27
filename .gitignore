@@ -1,20 +1,23 @@
 
 ###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/config/secrets/prod/prod.decrypt.private.php
-/public/bundles/
-/var/
-/vendor/
+/src/.env.local
+/src/.env.local.php
+/src/.env.*.local
+/src/config/secrets/prod/prod.decrypt.private.php
+/src/public/bundles/
+/src/var/
+/src/vendor/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
-.phpunit
-.phpunit.result.cache
-/phpunit.xml
+/src/.phpunit
+/src/.phpunit.result.cache
+/src/phpunit.xml
 ###< symfony/phpunit-bridge ###
 
 ###> docker ###
 docker-compose.override.yml
+.env.*
 ###< docker ###
+.DS_Store
+src/.DS_Store

@@ -9,7 +9,9 @@ services:
     depends_on:
       - database
     volumes:
-      - '.:/var/www/html:cached'
+      - './src/:/var/www/html:cached'
+    networks:
+      - backend-network
 
   nginx:
     image: 'nginx:1.13.6'
@@ -17,17 +19,24 @@ services:
     links:
       - 'php'
     volumes:
-      - '.:/var/www/html:cached'
+      - './src:/var/www/html:cached'
       - './docker:/etc/nginx/conf.d:cached'
+    networks:
+      - frontend-network
+      - backend-network
 
   database:
     image: 'mariadb:10.5'
     container_name: voting_app-database
     restart: 'on-failure'
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: voting-db
+      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_DATABASE: "${DB_NAME}"
+    networks:
+      - backend-network
 
 networks:
-  default:
-    name: voting_app
+  frontend-network:
+    driver: bridge
+  backend-network:
+    driver: bridge
