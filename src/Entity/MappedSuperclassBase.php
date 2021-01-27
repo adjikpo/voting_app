@@ -23,7 +23,7 @@ class MappedSuperclassBase
     protected ?\DateTimeInterface $created_at;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     protected ?\DateTimeInterface $updated_at;
 

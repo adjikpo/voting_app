@@ -1,0 +1,5 @@
+App\Entity\Project:
+  project_{1..10}:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    name: <name()>

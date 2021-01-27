@@ -1,0 +1,6 @@
+App\Entity\Question:
+  question_1:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    label: 'What is your birthdate ?'
+    project: '@project*'

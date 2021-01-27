@@ -1,0 +1,7 @@
+App\Entity\Vote:
+  vote_{1..10}:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    user: '@user*'
+    star: '@star*'
+    question: '@question*'
