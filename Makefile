@@ -41,8 +41,8 @@ env:
 	$(RUN) cp .env .env.docker
 	echo "Please fill environment files, then use make all"
 
-.PHONY: install ## Install the project (Install in first place)
-install:
+.PHONY: docker ## Install the project (Install in first place)
+docker:
 	$(DC) pull || true
 	$(DC) --env-file .env.docker build
 	$(DC) --env-file .env.docker up -d
@@ -56,7 +56,10 @@ database-init:
 	$(EXEC) $(CONSOLE) doctrine:database:create --if-not-exists
 	$(EXEC) $(CONSOLE) doctrine:schema:update --force
 
-.PHONY: stop ## stop the project
+.PHONY: all ## Install all the project
+all: docker composer database-init
+
+.PHONY: stop ## Stop the project
 stop:
 	$(DC) down
 
@@ -64,6 +67,6 @@ stop:
 exec:
 	$(EXEC) /bin/bash
 
-
-.PHONY: all ## Install all the project
-all: install composer database-init
+.PHONY: fixtures ## Run the fixtures generator (-q = quiet)
+fixtures:
+	$(EXEC) $(CONSOLE) hautelook:fixtures:load -q

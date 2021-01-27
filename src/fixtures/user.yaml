@@ -1,0 +1,6 @@
+App\Entity\User:
+  user_{1..10}:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    name: <name()>
+    is_admin: <boolean()>

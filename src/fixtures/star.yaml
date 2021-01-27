@@ -1,0 +1,51 @@
+App\Entity\Star:
+  star_1:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    mark: 1
+    label: 'This is full bullshit'
+  star_2:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    mark: 2
+    label: 'This is little bit bullshit'
+  star_3:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    mark: 3
+    label: 'Jerk work'
+  star_4:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    mark: 4
+    label: 'Could be better'
+  star_5:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    mark: 5
+    label: 'Good work but you have to improve'
+  star_6:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    mark: 6
+    label: 'That is ok'
+  star_7:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    mark: 7
+    label: 'You have understood the concept'
+  star_8:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    mark: 8
+    label: 'Very good job !'
+  star_9:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    mark: 9
+    label: 'Impressive this is perfect !'
+  star_10:
+    __construct: false
+    created_at: "<dateTime('now')>"
+    mark: 10
+    label: 'Amazing, please teach me !'
