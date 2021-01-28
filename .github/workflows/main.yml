@@ -15,5 +15,5 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd voting_app
+            cd /home/github_action/voting_app
             make all
