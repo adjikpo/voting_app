@@ -54,7 +54,6 @@ composer:
 .PHONY: database-init ## Initialization database
 database-init:
 	$(EXEC) $(CONSOLE) doctrine:database:create --if-not-exists
-	$(EXEC) $(CONSOLE) doctrine:schema:validate
 	$(EXEC) $(CONSOLE) doctrine:schema:update --force
 
 .PHONY: database-reset ## Reset the database
