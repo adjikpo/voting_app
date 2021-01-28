@@ -6,9 +6,9 @@ use App\Repository\CoreRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=CoreRepository::class)
+ * @ORM\MappedSuperclass
  */
-class MappedSuperclassBase
+class Base
 {
     /**
      * @ORM\Id

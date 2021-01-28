@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=VoteRepository::class)
  */
-class Vote extends MappedSuperclassBase
+class Vote extends Base
 {
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="votes")

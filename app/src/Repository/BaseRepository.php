@@ -2,21 +2,21 @@
 
 namespace App\Repository;
 
-use App\Entity\MappedSuperclassBase;
+use App\Entity\Base;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method MappedSuperclassBase|null find($id, $lockMode = null, $lockVersion = null)
- * @method MappedSuperclassBase|null findOneBy(array $criteria, array $orderBy = null)
- * @method MappedSuperclassBase[]    findAll()
- * @method MappedSuperclassBase[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Base|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Base|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Base[]    findAll()
+ * @method Base[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CoreRepository extends ServiceEntityRepository
+class BaseRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, MappedSuperclassBase::class);
+        parent::__construct($registry, Base::class);
     }
 
     // /**
