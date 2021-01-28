@@ -16,4 +16,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/github_action/voting_app
+            git pull
             make all
