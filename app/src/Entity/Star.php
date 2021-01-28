@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=StarRepository::class)
  */
-class Star extends MappedSuperclassBase
+class Star extends Base
 {
     /**
      * @ORM\Column(type="integer")
